@@ -15,13 +15,33 @@
     .container {
       padding: 80px 20px;
     }
+
+    /* PARLAYAN BAŞLIK (H1) AYARI */
     h1 {
       font-size: 42px;
       margin-bottom: 40px;
+      /* Uiverse'den aldığın efekt buraya entegre edildi */
+      background: linear-gradient(to right, #4d4d4d 0, #fff 10%, #4d4d4d 20%);
+      background-position: 0;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 3s infinite linear;
+      animation-fill-mode: forwards;
+      display: inline-block; /* Parlamanın düzgün çalışması için */
     }
+
+    /* PARLAMA ANİMASYONU */
+    @keyframes shine {
+      0% { background-position: 0; }
+      60% { background-position: 250px; } /* Yazı uzun olduğu için 180'den 250'ye çıkardım */
+      100% { background-position: 250px; }
+    }
+
     .game {
       margin-bottom: 40px;
     }
+
+    /* BUTONLAR */
     .game a {
       display: inline-block;
       margin-top: 10px;
@@ -30,7 +50,18 @@
       color: #fff;
       text-decoration: none;
       border-radius: 6px;
+      transition: all 0.3s ease;
+      font-weight: bold;
+      border: 1px solid transparent;
     }
+
+    /* Butona ufak bir hareket ekledim: Üzerine gelince parlasın ve büyüsün */
+    .game a:hover {
+      background: #ff5252;
+      transform: scale(1.05); /* Hafif büyüme */
+      box-shadow: 0 0 15px rgba(255, 60, 60, 0.4); /* Kırmızı parlama */
+    }
+
     .about {
       max-width: 700px;
       margin: 40px auto;
@@ -82,7 +113,7 @@
   <div class="about">
     <h2>About ariteWorks</h2>
     <p>
-     My name is Alican Arite, and I’m the solo developer behind ariteWorks.
+       My name is Alican Arite, and I’m the solo developer behind ariteWorks.
     I create mobile games from scratch, handling everything from design to code.
     My focus is on building fun, polished, and engaging experiences.
     More projects are currently in development.
@@ -100,7 +131,6 @@
 
   <p>© ariteWorks</p>
 </footer>
-
 
 </body>
 </html>
